@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Hope Vision | Sustainable Innovation. Smart Connections.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest-green: #0D4A3C;
+            --forest-dark: #09382D;
+            --forest-light: #145A4A;
+            --white: #FFFFFF;
+            --white-80: rgba(255, 255, 255, 0.8);
+            --white-60: rgba(255, 255, 255, 0.6);
+            --white-40: rgba(255, 255, 255, 0.4);
+            --white-10: rgba(255, 255, 255, 0.1);
+            --white-5: rgba(255, 255, 255, 0.05);
+            --amber: #F59E0B;
+            --amber-light: #FBBF24;
+            --purple: #A855F7;
+            --purple-light: #C084FC;
+            --mint: #7DD3C0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--forest-green);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(13, 74, 60, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 0.75rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white-80);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 1.5rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .hero-glow-1 {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 300px;
+            height: 300px;
+            background: var(--amber);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            width: 400px;
+            height: 400px;
+            background: var(--purple);
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo {
+            height: 140px;
+            margin-bottom: 2rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--amber) 0%, var(--amber-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--mint);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: var(--white-60);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--amber) 0%, #D97706 100%);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white-10);
+            color: var(--white);
+            border: 1px solid var(--white-20);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white-20);
+            transform: translateY(-2px);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, var(--purple) 0%, #7C3AED 100%);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+        }
+
+        .btn-purple:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.4);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 1.5rem;
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .badge-purple {
+            background: rgba(168, 85, 247, 0.2);
+            color: var(--purple-light);
+        }
+
+        .badge-amber {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--amber-light);
+        }
+
+        .badge-mint {
+            background: rgba(125, 211, 192, 0.2);
+            color: var(--mint);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-title .gradient-purple {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title .gradient-amber {
+            background: linear-gradient(135deg, var(--amber) 0%, var(--amber-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            color: var(--white-60);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Vision Key Section */
+        .vision-key {
+            background: linear-gradient(to left, rgba(168, 85, 247, 0.1), transparent);
+        }
+
+        .vision-key-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .vision-key-content {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--white-5);
+            border-radius: 12px;
+            border: 1px solid var(--white-10);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(168, 85, 247, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--purple-light);
+        }
+
+        .feature-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text {
+            font-size: 0.85rem;
+            color: var(--white-60);
+        }
+
+        .price-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .price-label {
+            font-size: 0.9rem;
+            color: var(--white-40);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .price span {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .gallery-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .gallery-col:nth-child(2) {
+            margin-top: 2rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(124, 58, 237, 0.2));
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Lamps Section */
+        .lamps {
+            background: linear-gradient(to right, rgba(245, 158, 11, 0.1), transparent);
+        }
+
+        .lamps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .lamp-card {
+            background: var(--white-5);
+            border: 1px solid var(--white-10);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .lamp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--white-20);
+        }
+
+        .lamp-img-container {
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .lamp-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .lamp-card:hover .lamp-img {
+            transform: scale(1.05);
+        }
+
+        .lamp-info {
+            padding: 1.25rem;
+        }
+
+        .lamp-tag {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--amber-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .lamp-tag svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .lamp-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .lamp-desc {
+            font-size: 0.85rem;
+            color: var(--white-60);
+            margin-bottom: 0.5rem;
+        }
+
+        .lamp-size {
+            font-size: 0.75rem;
+            color: var(--white-40);
+            margin-bottom: 1rem;
+        }
+
+        .lamp-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lamp-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--amber) 0%, var(--amber-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lamp-includes {
+            font-size: 0.7rem;
+            color: var(--white-40);
+        }
+
+        .lamps-cta {
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: linear-gradient(135deg, var(--white-10), var(--white-5));
+            border-radius: 24px;
+            padding: 3rem;
+            border: 1px solid var(--white-10);
+        }
+
+        .about-content {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-title span {
+            color: var(--mint);
+        }
+
+        .about-text {
+            color: var(--white-70);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--mint);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--white-60);
+            margin-top: 0.5rem;
+        }
+
+        .about-image {
+            position: relative;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .about-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -1rem;
+            left: -1rem;
+            background: var(--forest-green);
+            border: 1px solid var(--white-20);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(125, 211, 192, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--mint);
+        }
+
+        .badge-text h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .badge-text p {
+            font-size: 0.8rem;
+            color: var(--white-60);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--white-10);
+            padding: 3rem 1.5rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+        }
+
+        .footer-text {
+            color: var(--white-40);
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white-60);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--white);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--white-5);
+        }
+
+        .footer-tagline {
+            color: var(--white-40);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .lamps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-logo {
+                height: 100px;
+            }
+
+            .vision-key-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .gallery-col:nth-child(2) {
+                margin-top: 0;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lamps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .about-grid {
+                padding: 2rem;
+            }
+
+            .floating-badge {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 1rem;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-social {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <img src="logo.png" alt="Green Hope Vision" class="nav-logo">
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#vision-key">Vision Key</a></li>
+                <li><a href="#lamps">3D STAG Lamps</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+        </div>
+        <div class="hero-content">
+            <img src="logo.png" alt="Green Hope Vision" class="hero-logo">
+            <h1 class="hero-title">GREEN HOPE <span>VISION</span></h1>
+            <p class="hero-subtitle">Sustainable Innovation. Smart Connections.</p>
+            <p class="hero-text">We bridge technical engineering with modern micro-manufacturing to bring you smart networking tools and aesthetic home lighting.</p>
+            <div class="hero-buttons">
+                <a href="#vision-key" class="btn btn-purple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                        <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                    </svg>
+                    Shop NFC Keychain
+                </a>
+                <a href="#lamps" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18h6"></path>
+                        <path d="M10 22h4"></path>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h4a2 2 0 0 0 2-2 4 4 0 0 0-4-4z"></path>
+                    </svg>
+                    Shop 3D STAG Lamps
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--white-40);">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Vision Key Section -->
+    <section class="section vision-key" id="vision-key">
+        <div class="section-container">
+            <div class="vision-key-grid">
+                <div class="vision-key-content">
+                    <div class="section-badge badge-purple">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                            <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                        </svg>
+                        Smart Tech
+                    </div>
+                    <h2 class="section-title">
+                        <span class="gradient-purple">Tap. Connect. Share.</span><br>Instantly.
+                    </h2>
+                    <p class="section-description" style="text-align: left; margin: 1.5rem 0;">
+                        The ultimate networking flex. Instantly share your Instagram, WhatsApp, or portfolio with a single tap to the back of any smartphone. Zero apps required.
+                    </p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="feature-title">Instant Transfer</h4>
+                                <p class="feature-text">Digital profile sharing in seconds</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="feature-title">100% Future-Proof</h4>
+                                <p class="feature-text">Reprogrammable anytime via NFC Tools</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="feature-title">Durable Shell</h4>
+                                <p class="feature-text">3D-printed PLA hard case</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="feature-title">No Apps Needed</h4>
+                                <p class="feature-text">Works with any modern smartphone</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-cta">
+                        <p class="price-label">Only</p>
+                        <p class="price">RM <span>15</span></p>
+                        <a href="https://forms.gle/CHUQaickDEYkNtAdA" target="_blank" class="btn btn-purple">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Order Your Vision Key
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-col">
+                        <img src="keychain1.jpeg" alt="Vision Key on backpack" class="gallery-img">
+                        <img src="keychain3.jpeg" alt="Vision Key with keys" class="gallery-img">
+                    </div>
+                    <div class="gallery-col">
+                        <img src="keychain2.jpeg" alt="Vision Key closeup" class="gallery-img">
+                        <img src="keychain4.jpeg" alt="Vision Key with phone" class="gallery-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lamps Section -->
+    <section class="section lamps" id="lamps">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge badge-amber">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18h6"></path>
+                        <path d="M10 22h4"></path>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h4a2 2 0 0 0 2-2 4 4 0 0 0-4-4z"></path>
+                    </svg>
+                    Ambient Lighting
+                </div>
+                <h2 class="section-title">
+                    <span class="gradient-amber">3D STAG:</span> Simple Forms. Beautiful Glow.
+                </h2>
+                <p class="section-description">
+                    Transform your room into a cozy retreat. 3D-printed on-demand using biodegradable PLA. Includes E27 holder and free warm LED bulb.
+                </p>
+            </div>
+
+            <div class="lamps-grid">
+                <!-- Akari Lantern -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="akari.jpg" alt="Akari Lantern" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+                            </svg>
+                            Japanese Style
+                        </div>
+                        <h3 class="lamp-name">Akari Lantern</h3>
+                        <p class="lamp-desc">Zen-style vertical flow</p>
+                        <p class="lamp-size">Size: 22 × 16 × 16 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 50</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Lumi Spiral -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="lumi.jpg" alt="Lumi Spiral" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                            Modern Design
+                        </div>
+                        <h3 class="lamp-name">Lumi Spiral</h3>
+                        <p class="lamp-desc">Gentle swirl for reading</p>
+                        <p class="lamp-size">Size: 27 × 15 × 15 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 50</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Noir -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="noir.jpg" alt="Noir" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            Cute Style
+                        </div>
+                        <h3 class="lamp-name">Noir</h3>
+                        <p class="lamp-desc">Compact playful design</p>
+                        <p class="lamp-size">Size: 24 × 18 × 18 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 55</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Hexa -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="hexa.jpg" alt="Hexa" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                            Geometric
+                        </div>
+                        <h3 class="lamp-name">Hexa</h3>
+                        <p class="lamp-desc">Intricate shadow patterns</p>
+                        <p class="lamp-size">Size: 24 × 10 × 10 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 60</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Aurora -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="aurora.jpg" alt="Aurora" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 12h20"></path>
+                                <path d="M2 12c5.523 0 10-4.477 10-10"></path>
+                                <path d="M22 12c-5.523 0-10 4.477-10 10"></path>
+                            </svg>
+                            Organic
+                        </div>
+                        <h3 class="lamp-name">Aurora</h3>
+                        <p class="lamp-desc">Wave-like flowing design</p>
+                        <p class="lamp-size">Size: 24 × 10 × 10 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 60</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Noko -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="noko.jpg" alt="Noko" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            Organic
+                        </div>
+                        <h3 class="lamp-name">Noko</h3>
+                        <p class="lamp-desc">Resting moon charm</p>
+                        <p class="lamp-size">Size: 28 × 24 × 24 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 60</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- WaveGlow -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="waveglow.jpg" alt="WaveGlow" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+                                <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+                                <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+                            </svg>
+                            Sculptural
+                        </div>
+                        <h3 class="lamp-name">WaveGlow</h3>
+                        <p class="lamp-desc">Flowing wave elegance</p>
+                        <p class="lamp-size">Size: 38 × 17 × 17 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 60</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Luno -->
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="lamp-card">
+                    <div class="lamp-img-container">
+                        <img src="luno.jpg" alt="Luno" class="lamp-img">
+                    </div>
+                    <div class="lamp-info">
+                        <div class="lamp-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            Celestial
+                        </div>
+                        <h3 class="lamp-name">Luno</h3>
+                        <p class="lamp-desc">Full moon calming glow</p>
+                        <p class="lamp-size">Size: 38 × 21 × 21 cm</p>
+                        <div class="lamp-price-row">
+                            <span class="lamp-price">RM 60</span>
+                            <span class="lamp-includes">E27 + LED</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="lamps-cta">
+                <a href="https://forms.gle/oKcXuR113JgpoE838" target="_blank" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    Order Your Lamp Here
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-badge badge-mint">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                        </svg>
+                        Our Philosophy
+                    </div>
+                    <h2 class="about-title">Built <span>Differently.</span></h2>
+                    <p class="about-text">
+                        We operate on a sustainable, hybrid micro-manufacturing model. By ditching overseas injection molding, we eliminate massive factory waste. Every product is engineered in-house, 3D-printed locally using Bambu Lab technology, and assembled with precision.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">Local Production</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Factory Waste</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">PLA</div>
+                            <div class="stat-label">Plant-Based</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="printingprocess.jpg" alt="3D Printing Process" class="about-img">
+                    <div class="floating-badge">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="badge-text">
+                            <h4>Eco-Friendly</h4>
+                            <p>Biodegradable Materials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Green Hope Vision" class="footer-logo">
+                    <p class="footer-text">© 2025 Green Hope Vision | 3D STAG Official</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://instagram.com/3dstag.official" target="_blank" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        @3dstag.official
+                    </a>
+                    <a href="mailto:3dstags@gmail.com" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        3dstags@gmail.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-tagline">Designed with care. 3D-printed with precision. Built for the future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.background = 'rgba(13, 74, 60, 0.98)';
+            navLinks.style.padding = '1rem 1.5rem';
+            navLinks.style.gap = '1rem';
+            navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+        }
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
